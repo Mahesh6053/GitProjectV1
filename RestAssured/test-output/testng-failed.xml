@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RestAssured.RestAssured.GetBooking">
+      <class name="RestAssured.RestAssured.PostRequest.PartialUpdateBooking">
         <methods>
-          <include name="getBookingTest"/>
+          <include name="partialUpdate"/>
         </methods>
-      </class> <!-- RestAssured.RestAssured.GetBooking -->
+      </class> <!-- RestAssured.RestAssured.PostRequest.PartialUpdateBooking -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
