@@ -4,15 +4,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import RestAssured.RestAssured.PostRequest.BaseClassForCreationBookings;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class GetBooking {
+public class GetBooking extends BaseClassForCreationBookings {
 
 	@Test
 	public void getBookingTest() {
 		// Get response with booking
-		Response response = RestAssured.get("https://restful-booker.herokuapp.com/booking/5");
+		Response response = RestAssured.given(spec).get("/booking/5");
 		response.print();
 
 		// Verify response 200
@@ -21,22 +22,22 @@ public class GetBooking {
 		// Verify All fields
 		SoftAssert softAssert = new SoftAssert();
 		String actualFirstName = response.jsonPath().getString("firstname");
-		softAssert.assertEquals(actualFirstName, "Sally", "firstname in response is not expected");
+		softAssert.assertEquals(actualFirstName, "Mary", "firstname in response is not expected");
 
 		String actualLastName = response.jsonPath().getString("lastname");
-		softAssert.assertEquals(actualLastName, "Jackson", "lastname in response is not expected");
+		softAssert.assertEquals(actualLastName, "Ericsson", "lastname in response is not expected");
 
 		int price = response.jsonPath().getInt("totalprice");
-		softAssert.assertEquals(price, 114, "totalprice in response is not expected");
+		softAssert.assertEquals(price, 492, "totalprice in response is not expected");
 
 		boolean depositpaid = response.jsonPath().getBoolean("depositpaid");
 		softAssert.assertFalse(depositpaid, "depositpaid should be true, but it's nott");
 
 		String actualCheckin = response.jsonPath().getString("bookingdates.checkin");
-		softAssert.assertEquals(actualCheckin, "2016-06-25", "checkin in response is not expected");
+		softAssert.assertEquals(actualCheckin, "2020-06-06", "checkin in response is not expected");
 
 		String actualCheckout = response.jsonPath().getString("bookingdates.checkout");
-		softAssert.assertEquals(actualCheckout, "2022-03-13", "checkout in response is not expected");
+		softAssert.assertEquals(actualCheckout, "2021-08-11", "checkout in response is not expected");
 
 		/*
 		 * String actualAdditionalneeds =

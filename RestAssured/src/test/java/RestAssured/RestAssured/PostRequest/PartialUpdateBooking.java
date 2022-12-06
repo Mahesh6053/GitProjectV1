@@ -34,9 +34,9 @@ public class PartialUpdateBooking extends BaseClassForCreationBookings{
 		
 		//partial update booking
 		
-		Response responsePartialUpdate = RestAssured.given().auth().preemptive().basic("admin", "password123").
+		Response responsePartialUpdate = RestAssured.given(spec).auth().preemptive().basic("admin", "password123").
 				contentType(ContentType.JSON).body(body01.toString())
-				.patch("https://restful-booker.herokuapp.com/booking/" + bookingId);
+				.patch("/booking/" + bookingId);
 		responsePartialUpdate.print();
 		
 		
