@@ -30,7 +30,7 @@ public class GetBooking {
 		softAssert.assertEquals(price, 114, "totalprice in response is not expected");
 
 		boolean depositpaid = response.jsonPath().getBoolean("depositpaid");
-		softAssert.assertFalse(depositpaid, "depositpaid should be true, but it's not");
+		softAssert.assertFalse(depositpaid, "depositpaid should be true, but it's nott");
 
 		String actualCheckin = response.jsonPath().getString("bookingdates.checkin");
 		softAssert.assertEquals(actualCheckin, "2016-06-25", "checkin in response is not expected");
