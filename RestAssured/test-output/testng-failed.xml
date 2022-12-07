@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RestAssured.RestAssured.GetBooking">
+      <class name="RestAssured.RestAssured.PostRequest.Deserialization">
         <methods>
           <include name="setUp"/>
-          <include name="getBookingTest"/>
+          <include name="createBookingWithPOJOTest"/>
         </methods>
-      </class> <!-- RestAssured.RestAssured.GetBooking -->
+      </class> <!-- RestAssured.RestAssured.PostRequest.Deserialization -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

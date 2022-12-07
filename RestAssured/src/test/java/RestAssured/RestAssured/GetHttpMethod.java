@@ -5,17 +5,19 @@ import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import RestAssured.RestAssured.PostRequest.BaseClassForCreationBookings;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class GetHttpMethod {
+public class GetHttpMethod extends BaseClassForCreationBookings{
 	
 	@Test
 	public void getBookingIds()
 	{
-		//get response from booking id table
-		
-		Response response = RestAssured.get("https://restful-booker.herokuapp.com/booking");
+		  //query parameter 
+		spec.queryParam("firstname", "Susan");
+		 
+		Response response = RestAssured.given(spec).get("/booking");
 		response.print();
 		
 		//validate the booking response statuscode ex:200
