@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RestAssured.RestAssured.PostRequest.Deserialization">
+      <class name="RestAssuredRahulShetty.ComplexJsonParse">
         <methods>
-          <include name="setUp"/>
-          <include name="createBookingWithPOJOTest"/>
+          <include name="complexParse"/>
         </methods>
-      </class> <!-- RestAssured.RestAssured.PostRequest.Deserialization -->
+      </class> <!-- RestAssuredRahulShetty.ComplexJsonParse -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
